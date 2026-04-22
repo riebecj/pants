@@ -239,7 +239,7 @@ For working examples, including multi-platform builds with GitHub Actions, refer
 
 ### File or Directory Artifact Extraction
 
-Much like, `adhoc_tool` or `shell_command`, the `docker_image` target is able to produce outputs that can be supplied to other targets, see the [docker documentation](https://docs.docker.com/build/building/export/#export-binaries-from-a-build) for docker-sepcific information.
+Much like, `adhoc_tool` or `shell_command`, the `docker_image` target is able to produce outputs that can be supplied to other targets, see the [docker documentation](https://docs.docker.com/build/building/export/#export-binaries-from-a-build) for docker-specific information.
 
 These can be in the form of files or directories that are copied from a build stage in your Dockerfile via `COPY --from=<target_stage> <target_path> <output_path>`. Use the `output_files` field to capture individual files, or `output_directories` to capture entire directories as output.
 
