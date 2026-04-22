@@ -114,9 +114,7 @@ class DockerPackageFieldSet(PackageFieldSet):
 
     def pushes_on_package(self) -> bool:
         """Returns True if this docker_image target would push to a registry during packaging."""
-        # DictStringToStringField can be None, but DockerImageBuildImageOutputField overrides it
-        # with a default value, so cast it.
-        value_or_default = cast("FrozenDict[str, str]", self.output.value or self.output.default)
+        value_or_default = self.output.value or self.output.default
         return value_or_default.get("push") == "true" or value_or_default["type"] == "registry"
 
     def format_tag(self, tag: str, interpolation_context: InterpolationContext) -> str:
